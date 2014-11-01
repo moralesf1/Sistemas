@@ -7,6 +7,7 @@ import java.util.Locale;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Menu;
@@ -14,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.content.Intent;
 
 
 public class Inicio extends Activity {
@@ -22,25 +24,44 @@ public class Inicio extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
-        String archivo="idioma";
-        
+        SharedPreferences Pref =getPreferences(Context.MODE_PRIVATE);
+        String idioma = null;
+        final String res;
+        String opcion = Pref.getString("idioma", "false");
         final TextView opc=(TextView)findViewById(R.id.opcion);
-        try {
-			opc.setText("esto: "+openFileInput(archivo));
-			
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+        Locale locale = new Locale(opcion);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config, 
+        getBaseContext().getResources().getDisplayMetrics());
+        setContentView(R.layout.activity_inicio); 
+        opc.setText("esto: "+opcion);
+        if(opcion.equals("en")){
+        	idioma="es";
+        	
+        }
+        if(opcion.equals("es") || opcion.equals("false")){
+        	idioma="en";
+        }
+        res=idioma;
+        
         final Button button = (Button) findViewById(R.id.idioma);
         button.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				 String languageToLoad  = "en";
+				
+				
+						SharedPreferences Pref =getPreferences(Context.MODE_PRIVATE);
+						SharedPreferences.Editor editor=Pref.edit();
+						editor.putString("idioma", res);
+						editor.commit();
+					
+					
 			        //creacion del objeto de tipo locate para cambiar el recurso
-			        Locale locale = new Locale(languageToLoad);
+			        Locale locale = new Locale(res);
 			        Locale.setDefault(locale);
 			        Configuration config = new Configuration();
 			        config.locale = locale;
@@ -48,7 +69,10 @@ public class Inicio extends Activity {
 			        getBaseContext().getResources().getDisplayMetrics());
 			        setContentView(R.layout.activity_inicio); 
 			}
-		});        	 
+		});  
+       
+        	
+        
     }
 
 
