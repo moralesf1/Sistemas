@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- Strings de los elementos -->
+    <string name="app_name">Sistema</string>
+    <string name="usuario">User:</string>
+    <string name="action_settings">Settings</string>
+    <string name="clave">password</string>
+    <string name="boton">Login</string>
+    <string name="reg">sign in</string>
+    <string name="lenguaje">Español</string>
+    
+    <!-- Colores de los elementos -->
+    <color name="editText">#ecf0f1</color>
+ 	<color name="background">#3498db</color>
+ 	<color name="login">#34495e</color>
+ 	<color name="txtboton">#ffffff</color>
+ 	
+</resources>
