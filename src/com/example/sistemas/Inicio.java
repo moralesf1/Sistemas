@@ -19,14 +19,13 @@ import android.content.Intent;
 
 
 public class Inicio extends Activity {
-
+	public String res;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
         SharedPreferences Pref =getPreferences(Context.MODE_PRIVATE);
         String idioma = null;
-        final String res;
         String opcion = Pref.getString("idioma", "false");
         final TextView opc=(TextView)findViewById(R.id.opcion);
         Locale locale = new Locale(opcion);
@@ -71,10 +70,11 @@ public class Inicio extends Activity {
 			}
 		});  
        
+    	   
+       
         	
         
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

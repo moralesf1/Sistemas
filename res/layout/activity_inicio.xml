@@ -88,7 +88,6 @@
         android:layout_alignLeft="@+id/textView2"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="38dp"
-        android:onClick="cambio"
         android:text="@string/lenguaje" />
 
 </RelativeLayout>
