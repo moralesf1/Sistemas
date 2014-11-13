@@ -1,8 +1,7 @@
 package com.example.sistemas;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+
+
 import java.util.Locale;
 
 import android.app.Activity;
@@ -15,7 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.content.Intent;
+
 
 
 public class Inicio extends Activity {
