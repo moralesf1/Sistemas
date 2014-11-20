@@ -21,6 +21,7 @@ public final class R {
         public static final int txtboton=0x7f060003;
     }
     public static final class dimen {
+        public static final int activity_frag=0x7f040002;
         /**  Default screen margins, per the Android Design guidelines. 
 
          Example customization of dimensions originally defined in res/values/dimens.xml
@@ -32,7 +33,7 @@ public final class R {
          */
         public static final int activity_horizontal_margin=0x7f040000;
         public static final int activity_vertical_margin=0x7f040001;
-        public static final int lbltext=0x7f040002;
+        public static final int lbltext=0x7f040003;
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
