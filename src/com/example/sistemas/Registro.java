@@ -15,7 +15,7 @@ public class Registro extends Activity {
 	}
 	public void registrar(View v){
 		DB_Manager manager=new DB_Manager(this);
-		Boolean opc=true;
+		Boolean opc=true,ret=true;
 		EditText usuario=(EditText)findViewById(R.id.user_reg);
 		EditText pass=(EditText)findViewById(R.id.pass_reg);
 		EditText correo=(EditText)findViewById(R.id.correo);
@@ -32,7 +32,10 @@ public class Registro extends Activity {
 			opc=false;
 		}
 		if(opc){
-			manager.registrar(usuario.getText().toString(), pass.getText().toString(), correo.getText().toString());
+			ret=manager.registrar(usuario.getText().toString(), pass.getText().toString(), correo.getText().toString());
+		}
+		if(ret){
+			usuario.setError(Html.fromHtml("<font color='black'>el usuario ya existe</font>"));
 		}
 		
 		

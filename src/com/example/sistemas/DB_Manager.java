@@ -11,6 +11,7 @@ public class DB_Manager {
 	public static final String CN_USER="usuario";
 	public static final String CN_PASS="clave";
 	public static final String CN_EMAIL="correo";
+	public Cursor cursor;
 	
 		
 	public static final String CREATE_TABLE="create table "+TABLE_NAME+" ("
@@ -41,14 +42,20 @@ public class DB_Manager {
 		return valores;
 	}
 	
-	public void registrar(String usuario,String clave,String correo){
-		
-		db.insert(TABLE_NAME, null,generarContentValues_registro(usuario, clave, correo)); //si devuelve -1 es porque ocurrio un problema
+	public Boolean registrar(String usuario,String clave,String correo){
+		cursor=checkin(usuario);
+		if(cursor.moveToNext()){
+			return true;
+		}
+		else{
+			//db.insert(TABLE_NAME, null,generarContentValues_registro(usuario, clave, correo)); //si devuelve -1 es porque ocurrio un problema
+			return false;
+		}
 		
 	}
-	public Cursor checkin(String usuario,String clave){
-		String[] datos=new String[]{CN_ID,CN_USER,CN_PASS};
+	public Cursor checkin(String user){
+		String[] datos=new String[]{CN_ID};
 		
-		return db.query(TABLE_NAME, datos,null,null,null,null,null);
+		return db.rawQuery("Select _id from usuario where usuario='"+user+"'",null);
 	}
 }
