@@ -42,7 +42,7 @@ public class Inicio extends Activity {
     	Context context = getApplicationContext();
     	int duration = Toast.LENGTH_SHORT;
     	Toast toast;
-    	cursor=manager.checkin(user.getText().toString());
+    	cursor=manager.checkin(user.getText().toString(),pass.getText().toString());
     	if(cursor.moveToNext()){
     		
         	CharSequence text = "ENTROO!";

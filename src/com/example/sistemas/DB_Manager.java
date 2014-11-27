@@ -43,7 +43,7 @@ public class DB_Manager {
 	}
 	
 	public Boolean registrar(String usuario,String clave,String correo){
-		cursor=checkin(usuario);
+		cursor=usuario(usuario);
 		if(cursor.moveToNext()){
 			return true;
 		}
@@ -53,9 +53,17 @@ public class DB_Manager {
 		}
 		
 	}
-	public Cursor checkin(String user){
+	public Cursor usuario(String user){
 		String[] datos=new String[]{CN_ID};
 		
 		return db.rawQuery("Select _id from usuario where usuario='"+user+"'",null);
+	}
+	public Cursor checkin(String user,String clave){
+		String pass_MD5;
+		EMD5 md5=new EMD5();
+		pass_MD5=md5.encriptadoMD5(clave);
+		String[] datos=new String[]{CN_ID};
+		
+		return db.rawQuery("Select _id from usuario where usuario='"+user+"' and clave='"+pass_MD5+"'",null);
 	}
 }

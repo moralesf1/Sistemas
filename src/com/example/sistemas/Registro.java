@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
+import android.view.View.OnFocusChangeListener;
 import android.widget.EditText;
 
 public class Registro extends Activity {
@@ -12,6 +13,16 @@ public class Registro extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_registro);
+		final EditText usuario=(EditText)findViewById(R.id.user_reg);
+		usuario.setOnFocusChangeListener(new OnFocusChangeListener() {
+			
+			@Override
+			public void onFocusChange(View v, boolean hasFocus) {
+				// TODO Auto-generated method stub
+				usuario.setError(Html.fromHtml("<font color='black'>holis</font>"));
+				
+			}
+		});
 	}
 	public void registrar(View v){
 		DB_Manager manager=new DB_Manager(this);
