@@ -55,42 +55,27 @@
         android:inputType="textPassword" />
 
     <Button
-        android:id="@+id/login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/pass"
-        android:layout_marginTop="37dp"
-        android:background="@color/login"
-        android:text="@string/boton" />
-
-    <Button
         android:id="@+id/reg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/login"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:padding="5dp"
+        android:layout_alignBaseline="@+id/login"
+        android:layout_alignBottom="@+id/login"
+        android:layout_alignRight="@+id/user"
+        android:layout_marginRight="14dp"
         android:background="@color/login"
+        android:onClick="registro"
         android:text="@string/reg" />
 
-    <TextView
-        android:id="@+id/opcion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="17dp"
-        android:layout_toRightOf="@+id/reg"
-        android:text="" />
-
     <Button
-        android:id="@+id/idioma"
+        android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_alignParentBottom="true"
-        
-        android:layout_marginBottom="38dp"
-        android:text="@string/lenguaje" />
+        android:layout_alignLeft="@+id/user"
+        android:onClick="ingresar"
+        android:layout_below="@+id/pass"
+        android:layout_marginTop="48dp"
+        android:background="@color/login"
+        android:text="@string/boton" />
 
 </RelativeLayout>

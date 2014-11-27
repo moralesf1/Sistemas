@@ -2,9 +2,9 @@
 <resources>
 	<!-- Strings de los elementos -->
     <string name="app_name">Sistema</string>
-    <string name="usuario">Usuario:</string>
+    <string name="usuario">Usuario</string>
     <string name="action_settings">Settings</string>
-    <string name="clave">contraseña</string>
+    <string name="clave">Contraseña</string>
     <string name="boton">Iniciar</string>
     <string name="reg">Registrarse</string>
     <string name="lenguaje">English</string>
