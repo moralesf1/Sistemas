@@ -18,6 +18,7 @@ public class Db extends SQLiteOpenHelper {
 	@Override
 	public void onCreate(SQLiteDatabase db){
 		db.execSQL(DB_Manager.CREATE_TABLE);
+		db.execSQL(DB_Manager.deuda);
 	}
 	
 	@Override

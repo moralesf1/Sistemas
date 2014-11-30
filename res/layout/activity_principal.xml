@@ -1,0 +1,42 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.sistemas.Principal" >
+
+    <ImageButton
+        android:id="@+id/agregar_gasto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        android:contentDescription="@string/content_opc"
+        android:onClick="nuevo"
+        android:src="@drawable/ic_action_new" />
+
+    <Button
+        android:id="@+id/salir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="162dp"
+        android:onClick="salir"
+        android:text="@string/salir" />
+
+    <ImageButton
+        android:id="@+id/img_opc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/agregar_gasto"
+        android:layout_marginRight="24dp"
+        android:background="#000000"
+        android:contentDescription="@string/content_opc"
+        android:onClick="verificar"
+        android:src="@drawable/ic_action_settings" />
+
+</RelativeLayout>

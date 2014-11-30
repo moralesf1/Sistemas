@@ -8,6 +8,9 @@
     <string name="iniciar">Iniciar</string>
     <string name="reg">Registrarse</string>
     <string name="lenguaje">English</string>
+    <string name="content_opc">opciones</string>
+    <string name="salir">salir</string>
+    <string name="deuda">Nombre</string>
     
     <!-- Colores de los elementos -->
     <color name="editText">#ecf0f1</color>

@@ -8,6 +8,7 @@
     <string name="boton">Login</string>
     <string name="reg">sign in</string>
     <string name="lenguaje">Español</string>
+    <string name="deuda">Name</string>
     
     <!-- Colores de los elementos -->
     <color name="editText">#ecf0f1</color>

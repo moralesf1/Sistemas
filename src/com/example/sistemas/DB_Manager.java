@@ -19,6 +19,11 @@ public class DB_Manager {
 			+CN_USER+" text not null,"
 			+CN_PASS+" text,"
 			+CN_EMAIL+" text not null);";
+	public static final String deuda="create table deudas (" +
+									 "id_deudas integer primary key autoincrement," +
+									 "id_usuario integer,nombre text not null," +
+									 "deuda integer not null," +
+									 "prioridad text not null);";
 	
 	private Db helper;
 	private SQLiteDatabase db;
@@ -31,7 +36,16 @@ public class DB_Manager {
         
         
 	}
-	
+	public void registrar_deuda(String nombre,String monto,String prioridad,String id_user){
+		ContentValues valores=new ContentValues();
+		valores.put("id_usuario", id_user);
+		valores.put("nombre", nombre);
+		valores.put("deuda", monto);
+		valores.put("prioridad", prioridad);
+		db.insert("deudas",null,valores);
+		
+		
+	}
 	public ContentValues generarContentValues_registro(String nombre,String clave,String correo){
 		
 		ContentValues valores=new ContentValues();
@@ -48,13 +62,13 @@ public class DB_Manager {
 			return true;
 		}
 		else{
-			//db.insert(TABLE_NAME, null,generarContentValues_registro(usuario, clave, correo)); //si devuelve -1 es porque ocurrio un problema
+			db.insert(TABLE_NAME, null,generarContentValues_registro(usuario, clave, correo)); //si devuelve -1 es porque ocurrio un problema
 			return false;
 		}
 		
 	}
 	public Cursor usuario(String user){
-		String[] datos=new String[]{CN_ID};
+		
 		
 		return db.rawQuery("Select _id from usuario where usuario='"+user+"'",null);
 	}
@@ -62,8 +76,7 @@ public class DB_Manager {
 		String pass_MD5;
 		EMD5 md5=new EMD5();
 		pass_MD5=md5.encriptadoMD5(clave);
-		String[] datos=new String[]{CN_ID};
 		
-		return db.rawQuery("Select _id from usuario where usuario='"+user+"' and clave='"+pass_MD5+"'",null);
+		return db.rawQuery("Select _id,usuario from usuario where usuario='"+user+"' and clave='"+pass_MD5+"'",null);
 	}
 }

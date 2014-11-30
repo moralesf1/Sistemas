@@ -12,14 +12,23 @@
     <string name="correo">Correo</string>
     <string name="registrar">Registrar</string>
     <string name="cancelar">Cancelar</string>
+    <string name="salir">salir</string>
+    <string name="deuda">Nombre</string>
+    <string name="monto">Monto</string>
+    <string name="agregar">Agregar</string>
+    <string name="add_deuda">Agregar Deuda</string>
 
     <!-- Colores de los elementos -->
     <color name="editText">#ecf0f1</color>
     <color name="background">#3498db</color>
     <color name="login">#34495e</color>
     <color name="txtboton">#ffffff</color>
+    <color name="white">#E6E3F2FD</color>
 
     <string name="title_activity_registro">Registro</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_menu">Menu</string>
+    <string name="title_activity_principal">Principal</string>
+    <string name="title_activity_addgastos">Addgastos</string>
 
 </resources>
