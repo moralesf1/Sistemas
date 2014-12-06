@@ -4,5 +4,6 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="activity_frag">20dp</dimen>
-
+	<dimen name="ver_deuda_v">0dp</dimen>
+    <dimen name="ver_deuda_h">0dp</dimen>
 </resources>

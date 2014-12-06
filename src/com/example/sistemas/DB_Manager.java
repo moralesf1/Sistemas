@@ -1,5 +1,7 @@
 package com.example.sistemas;
 
+import java.util.ArrayList;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -19,11 +21,17 @@ public class DB_Manager {
 			+CN_USER+" text not null,"
 			+CN_PASS+" text,"
 			+CN_EMAIL+" text not null);";
+	
 	public static final String deuda="create table deudas (" +
-									 "id_deudas integer primary key autoincrement," +
+									 "_id integer primary key autoincrement," +
 									 "id_usuario integer,nombre text not null," +
 									 "deuda integer not null," +
 									 "prioridad text not null);";
+	
+	public static final String tarjetas="create table tarjetas ("+
+										"_id integer primary key autoincrement,"+
+										"id_usuario integer not null,"+
+										"numero_tarjeta integer not null);";
 	
 	private Db helper;
 	private SQLiteDatabase db;
@@ -66,6 +74,7 @@ public class DB_Manager {
 			return false;
 		}
 		
+		
 	}
 	public Cursor usuario(String user){
 		
@@ -79,4 +88,28 @@ public class DB_Manager {
 		
 		return db.rawQuery("Select _id,usuario from usuario where usuario='"+user+"' and clave='"+pass_MD5+"'",null);
 	}
+	public ArrayList<String> deudas(String id){
+		Cursor cursor;
+		ArrayList<String> rs = new ArrayList<String>();
+		cursor=db.rawQuery("Select _id,nombre,deuda from deudas",null);
+		while(cursor.moveToNext()){
+			rs.add(cursor.getString(0));
+			rs.add(cursor.getString(1));
+			rs.add(cursor.getString(2));
+		}
+		return rs;
+	}
+	public void up_pass(String pass,String id){
+		EMD5 md5=new EMD5();
+		ContentValues valores=new ContentValues();
+		valores.put("clave",md5.encriptadoMD5(pass));
+		db.execSQL("Update usuario Set clave='"+valores.get("clave")+"' where _id="+id);
+	}
 }
+
+
+
+
+
+
+

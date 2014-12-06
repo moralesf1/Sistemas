@@ -38,6 +38,25 @@
             android:name=".Addgastos"
             android:label="@string/title_activity_addgastos" >
         </activity>
+        <activity
+            android:name=".Info"
+            android:label="@string/title_activity_info" >
+        </activity>
+        <activity
+            android:name=".Opciones"
+            android:label="@string/title_activity_opciones" >
+        </activity>
+
+        <service android:name=".Servicio_noti" />
+
+        <activity
+            android:name=".Control"
+            android:label="@string/title_activity_control" >
+        </activity>
+        <activity
+            android:name=".Submenu"
+            android:label="@string/title_activity_submenu" >
+        </activity>
     </application>
 
 </manifest>

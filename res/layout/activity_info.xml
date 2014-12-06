@@ -1,0 +1,69 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="right"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/ver_deuda_v"
+    android:paddingLeft="@dimen/ver_deuda_h"
+    android:paddingRight="@dimen/ver_deuda_h"
+    android:paddingTop="@dimen/ver_deuda_v"
+    tools:context="com.example.sistemas.Info" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ListView
+            android:id="@+id/lista"
+            android:layout_width="match_parent"
+            android:layout_height="580dp"
+            android:layout_margin="16dp"
+            android:background="@color/background" >
+        </ListView>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="260dp"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="#000000"
+            android:baselineAligned="true"
+            android:gravity="right|center_vertical"
+            android:padding="10dp" >
+
+            <ImageButton
+                android:id="@+id/agregar_gasto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#000000"
+                android:contentDescription="@string/content_opc"
+                android:cropToPadding="true"
+                android:onClick="nuevo"
+                android:src="@drawable/ic_action_new" />
+        </LinearLayout>
+
+        <LinearLayout
+           
+   			
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignTop="@+id/linearLayout2"
+            android:background="#000000" >
+
+            <ImageButton
+                android:id="@+id/button1"
+                android:layout_width="114dp"
+                android:layout_height="50dp"
+                android:background="#000000"
+                android:onClick="atras"
+                android:src="@drawable/ic_action_back" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

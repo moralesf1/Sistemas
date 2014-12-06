@@ -12,12 +12,40 @@
     <string name="correo">Correo</string>
     <string name="registrar">Registrar</string>
     <string name="cancelar">Cancelar</string>
-    <string name="salir">salir</string>
+    <string name="cerrar">Cerrar Sesion</string>
     <string name="deuda">Nombre</string>
     <string name="monto">Monto</string>
     <string name="agregar">Agregar</string>
     <string name="add_deuda">Agregar Deuda</string>
-
+    <string name="consultar">Consultar</string>
+    <string name="cambio_lang">Cambiar Idioma</string>
+    <string name="regresar">Regresar</string>
+    <string name="ctrl_cuenta">Control de Cuenta</string>
+    <string name="titulo">Budget Family</string>
+    <string name="change_pass">Cambiar Contraseña</string>
+    <string name="re_change_pass">Repetir Contraseña</string>
+    <string name="actualizar">Actualizar</string>
+    <string name="notmatch">Las contraseñas no coinciden</string>
+    <string name="empty_user">Debe escribir un usuario</string>
+    <string name="empty_pass">Debe escribir una contraseña</string>
+    <string name="empty_email">Debe escribir un correo</string>
+    <string name="exist_user">el usuario ya existe</string>
+    <string name="not_session">Usuario o clave invalida</string>
+    <string name="dialog_important">Importante!</string>
+    <string name="title_activity_registro">Registro</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_menu">Menu</string>
+    <string name="title_activity_principal">Principal</string>
+    <string name="title_activity_addgastos">Addgastos</string>
+    <string name="title_activity_lista_gastos">Lista_gastos</string>
+    <string name="title_activity_info">Info</string>
+    <string name="title_activity_opciones">Opciones</string>
+    <string name="title_activity_control">Control</string>
+    <string name="ver_deudas">Ver deudas</string>
+    <string name="modificar">Modificar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="pagar">Pagar</string>
+    
     <!-- Colores de los elementos -->
     <color name="editText">#ecf0f1</color>
     <color name="background">#3498db</color>
@@ -25,10 +53,8 @@
     <color name="txtboton">#ffffff</color>
     <color name="white">#E6E3F2FD</color>
 
-    <string name="title_activity_registro">Registro</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="title_activity_menu">Menu</string>
-    <string name="title_activity_principal">Principal</string>
-    <string name="title_activity_addgastos">Addgastos</string>
+    <string name="ref_deuda">Referencia de la deuda</string>
+    <string name="moneda">Monto en Bs</string>
+    <string name="title_activity_submenu">Submenu</string>
 
 </resources>

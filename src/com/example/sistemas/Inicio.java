@@ -3,12 +3,21 @@ package com.example.sistemas;
 
 
 
+import java.util.Locale;
+
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,14 +32,35 @@ public class Inicio extends Activity {
 	private DB_Manager manager;
 	public Cursor cursor;
 	public Intent intent;
+	private NotificationManager nm; 
+	private static final int ID_NOTIFICACION_CREAR = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+    	
         super.onCreate(savedInstanceState);
+        
         setContentView(R.layout.activity_inicio);
+        nm=(NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+        Context context = getApplicationContext();
+        Intent notificationIntent = new Intent(this, Inicio.class);
+        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
+        Noti obj=new Noti(nm,contentIntent,context,System.currentTimeMillis());
+        
+        
         manager=new DB_Manager(this);
         SharedPreferences Pref =getSharedPreferences("session",Context.MODE_PRIVATE);
         String id=Pref.getString("id", "");
-        String usuario=Pref.getString("usuario", "");
+        SharedPreferences pref =getSharedPreferences("Opciones",Context.MODE_PRIVATE);
+		String idioma = null;
+        String opcion = pref.getString("idioma", "es");
+        
+        Locale locale = new Locale(opcion);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config, 
+        getBaseContext().getResources().getDisplayMetrics());
+        setContentView(R.layout.activity_inicio);
         if(!id.equals("")){
         	intent=new Intent(Inicio.this,Principal.class);
     		startActivity(intent);
@@ -44,6 +74,7 @@ public class Inicio extends Activity {
     public void registro(View v){
     	intent=new Intent(Inicio.this,Registro.class);
     	startActivity(intent);
+		finish();
     }
     public void ingresar(View v){
     	EditText user=(EditText)findViewById(R.id.user);
@@ -61,36 +92,19 @@ public class Inicio extends Activity {
     		intent=new Intent(Inicio.this,Principal.class);
     		startActivity(intent);
     		finish();
-        	CharSequence text = "ENTROO!";
         	
 
-        	toast = Toast.makeText(context, text, duration);
-        	toast.show();
-        	toast=Toast.makeText(context,cursor.getString(1), duration);
-        	toast.show();
+        	
     	}
     	else{
-    		toast=Toast.makeText(context,"no entro", duration);
-    		toast.show();
+    		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    		builder.setTitle(getText(R.string.dialog_important));
+    		builder.setMessage(getText(R.string.not_session));
+    		builder.setPositiveButton("OK",null);
+    		builder.create();
+            builder.show();     
     	}
     	
     }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.inicio, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+    
 }

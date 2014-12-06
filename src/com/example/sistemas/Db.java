@@ -19,11 +19,15 @@ public class Db extends SQLiteOpenHelper {
 	public void onCreate(SQLiteDatabase db){
 		db.execSQL(DB_Manager.CREATE_TABLE);
 		db.execSQL(DB_Manager.deuda);
+		db.execSQL(DB_Manager.tarjetas);
 	}
 	
 	@Override
 	public void onUpgrade(SQLiteDatabase db,int oldVersion,int newVersion){
-		
+		db.execSQL("DROP TABLE IF EXISTS " +DB_Manager.TABLE_NAME);
+		db.execSQL("DROP TABLE IF EXISTS deudas");
+		db.execSQL("DROP TABLE IF EXISTS tarjetas");
+		  onCreate(db);
 	}
 
 }

@@ -19,7 +19,7 @@
         android:background="#ecf0f1" >
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/mount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -31,7 +31,7 @@
             android:id="@+id/user_reg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textView1"
+            android:layout_below="@+id/mount"
             android:layout_centerHorizontal="true"
             android:ems="10"
             android:inputType="text" />
@@ -86,6 +86,7 @@
 
     <Button
         android:id="@+id/cancel"
+        android:onClick="cancelar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/registrar"
