@@ -8,16 +8,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.sistemas.Submenu" >
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:drawableLeft="@drawable/ic_action_back"
-        android:onClick="atras"
-        android:text="@string/regresar" />
-
     <EditText
         android:id="@+id/monto_edit"
         android:layout_width="wrap_content"
@@ -60,6 +50,7 @@
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="pagado"
         android:layout_alignLeft="@+id/button4"
         android:layout_below="@+id/prioridad_edit"
         android:layout_marginTop="22dp"
@@ -74,5 +65,34 @@
         android:layout_marginBottom="24dp"
         android:layout_toLeftOf="@+id/edit"
         android:text="@string/eliminar" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:drawableLeft="@drawable/ic_action_back"
+        android:onClick="atras"
+        android:text="@string/regresar" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/deuda"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nombre_edit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp"
+        android:text="@string/monto"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>

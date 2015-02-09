@@ -65,5 +65,10 @@
     <string name="tajerta_number">Numero de la tarjeta</string>
     <string name="banco">Banco</string>
     <string name="title_activity_ver_tarjetas">Ver_tarjetas</string>
+    <string name="title_activity_pagar">Pagar</string>
+    <string name="Efectivo">Efectivo</string>
+    <string name="tarjeta_solo">Tarjeta</string>
+    <string name="Aceptar">Aceptar</string>
+    <string name="Debe">Debe</string>
 
 </resources>

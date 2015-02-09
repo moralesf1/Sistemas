@@ -28,13 +28,15 @@ public class DB_Manager {
 									 "_id integer primary key autoincrement," +
 									 "id_usuario integer,nombre text not null," +
 									 "deuda integer not null," +
-									 "prioridad text not null);";
+									 "prioridad text not null, " +
+									 "estado text not null);";
 	
 	public static final String tarjetas="create table tarjetas ("+
 										"_id integer primary key autoincrement," +
 										" banco text not null, "+
 										" id_usuario integer not null,"+
-										" numero_tarjeta integer not null);";
+										" numero_tarjeta integer not null, " +
+										" deuda_tarjeta integer not null);";
 	
 	private Db helper;
 	private SQLiteDatabase db;
@@ -48,7 +50,7 @@ public class DB_Manager {
         
 	}
 	public void registrar_deuda(String nombre,String monto,int prioridad,String id_user,Context context){
-		
+		Toast.makeText(context,"esto entra en prioridad---> "+prioridad, Toast.LENGTH_SHORT).show();
 		ContentValues valores=new ContentValues();
 		valores.put("id_usuario", id_user);
 		valores.put("nombre", nombre);
@@ -59,6 +61,7 @@ public class DB_Manager {
 		else if(prioridad!=0){
 			valores.put("prioridad",prioridad);
 		}
+		valores.put("estado","sin pagar");
 		
 		
 		
@@ -71,6 +74,7 @@ public class DB_Manager {
 		valores.put("banco", banco);
 		valores.put("id_usuario", id);
 		valores.put("numero_tarjeta", numero_tarjeta);
+		valores.put("deuda_tarjeta",0);
 		db.insert("tarjetas", null, valores);
 		
 	}
@@ -111,11 +115,12 @@ public class DB_Manager {
 	public ArrayList<String> deudas(String id){
 		Cursor cursor;
 		ArrayList<String> rs = new ArrayList<String>();
-		cursor=db.rawQuery("Select _id,nombre,deuda from deudas",null);
+		cursor=db.rawQuery("Select _id,nombre,deuda,estado from deudas where id_usuario="+id,null);
 		while(cursor.moveToNext()){
 			rs.add(cursor.getString(0));
 			rs.add(cursor.getString(1));
 			rs.add(cursor.getString(2));
+			rs.add(cursor.getString(3));
 		}
 		return rs;
 	}
@@ -138,7 +143,7 @@ public class DB_Manager {
 		
 		return rs;
 	}
-	public void up_deuda(String nombre,String deuda,String prioridad,String id,String id_usuario){
+	public void up_deuda(String nombre,String deuda,int prioridad,String id,String id_usuario){
 		db.execSQL("Update deudas set nombre='"+nombre+"', deuda='"+deuda+"', prioridad='"+prioridad+"' where _id='"+id+"' and " +
 				"id_usuario='"+id_usuario+"'");
 	}
@@ -146,18 +151,31 @@ public class DB_Manager {
 		//Toast.makeText(context,"esto---> Delete from "+tabla+" where _id="+id, Toast.LENGTH_SHORT).show();
 		db.execSQL("Delete from "+tabla+" where _id="+id);
 	}
-	public ArrayList<String> ver_tarjetas(Context context){
+	public ArrayList<String> ver_tarjetas(Context context,String id){
 		Cursor cursor;
 		ArrayList<String> rs=new ArrayList<String>();
-		cursor=db.rawQuery("Select _id,banco,numero_tarjeta from tarjetas",null);
+		cursor=db.rawQuery("Select _id,banco,numero_tarjeta,deuda_tarjeta from tarjetas where id_usuario="+id,null);
 		while(cursor.moveToNext()){
 			rs.add(cursor.getString(0));
 			rs.add(cursor.getString(1));
 			rs.add(cursor.getString(2));
+			rs.add(cursor.getString(3));
 			
 		}
 		//Toast.makeText(context,"esto--->"+rs, Toast.LENGTH_SHORT).show();
 		return rs;
+	}
+	public String ver_tarjeta_pagar(String id_usuario,String id_tarjeta){
+		Cursor cursor;
+		String rs="";
+		cursor=db.rawQuery("Select deuda_tarjeta from tarjetas where _id="+id_tarjeta+" and id_usuario="+id_usuario, null);
+		while(cursor.moveToNext()){
+			rs=cursor.getString(0);
+		}
+		return rs;
+	}
+	public void up_deuda_tarjeta(String id_usuario,String id_tarjeta){
+		
 	}
 }
 

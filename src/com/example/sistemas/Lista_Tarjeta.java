@@ -4,10 +4,12 @@ public class Lista_Tarjeta {
 	private String banco;
 	private String numero;
 	private String id;
-	public Lista_Tarjeta(String id,String banco,String numero) {
+	private String deuda_tarjeta;
+	public Lista_Tarjeta(String id,String banco,String numero,String deuda_tarjeta) {
 		this.id=id;
 		this.banco=banco;
 		this.numero=numero;
+		this.deuda_tarjeta=deuda_tarjeta;
 	}
 	public String getBanco(){
 		return banco;
@@ -17,6 +19,9 @@ public class Lista_Tarjeta {
 	}
 	public String getId(){
 		return id;
+	}
+	public String getDeuda(){
+		return deuda_tarjeta;
 	}
 
 }

@@ -10,7 +10,7 @@
     tools:context="com.example.sistemas.Inicio" >
 
     <TextView
-        android:id="@+id/tarjeta_num"
+        android:id="@+id/tarjeta_num_pagar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -25,7 +25,7 @@
         android:background="@color/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tarjeta_num"
+        android:layout_below="@+id/tarjeta_num_pagar"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="21dp"
         android:ems="10" >

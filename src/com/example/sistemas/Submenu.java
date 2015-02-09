@@ -42,7 +42,7 @@ public class Submenu extends Activity {
 		
 		rs=manager.select_deuda(pref.getString("id", ""), id_item,this.getApplicationContext());
 		
-		
+		//Toast.makeText(this.getApplicationContext(),"id aqui---> "+rs.get(2), Toast.LENGTH_SHORT).show();
 		nombre_edit.setText(rs.get(0));
 		monto_edit.setText(rs.get(1));
 		prioridad_spinner.setSelection(Integer.parseInt(rs.get(2)));
@@ -60,7 +60,7 @@ public class Submenu extends Activity {
 		SharedPreferences pref=getSharedPreferences("item_selected",Context.MODE_PRIVATE);
 		SharedPreferences pref2=getSharedPreferences("session",Context.MODE_PRIVATE);
 		Spinner prioridad=(Spinner)findViewById(R.id.prioridad_edit);
-		manager.up_deuda(nombre_edit.getText().toString(),monto_edit.getText().toString(), prioridad.getSelectedItem().toString(), pref.getString("id_item",""),pref2.getString("id",""));
+		manager.up_deuda(nombre_edit.getText().toString(),monto_edit.getText().toString(), prioridad.getSelectedItemPosition(), pref.getString("id_item",""),pref2.getString("id",""));
 		Intent intent=new Intent(Submenu.this,Info.class);
 		startActivity(intent);
 		finish();
@@ -72,5 +72,10 @@ public class Submenu extends Activity {
 		Intent intent=new Intent(Submenu.this,Info.class);
 		startActivity(intent);
 		finish();
+	}
+	public void pagado(View v){
+		startActivity(new Intent(Submenu.this,Pagar.class));
+		finish();
+		
 	}
 }

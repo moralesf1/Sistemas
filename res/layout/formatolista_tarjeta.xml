@@ -11,16 +11,6 @@
         android:columnCount="1" >
 
         <TextView
-            android:id="@+id/tarjeta_num"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView2"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="14dp"
-            android:text="aaaaa"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        <TextView
             android:id="@+id/id_tarjeta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -33,27 +23,54 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
+            android:layout_alignRight="@+id/banco_pagar_tarjeta"
             android:text="@string/banco" />
 
         <TextView
-            android:id="@+id/banco_tarjeta"
+            android:id="@+id/tarjeta_num_pagar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/textView2"
+            android:text="aaaaa"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/banco_pagar_tarjeta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/nombre_banco"
-            android:layout_centerHorizontal="true"
+            android:layout_toRightOf="@+id/id_tarjeta"
             android:padding="15dp"
             android:text="hola"
-            android:textSize="17sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/banco_tarjeta"
-            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/banco_pagar_tarjeta"
+            android:layout_alignParentRight="true"
             android:text="@string/tajerta_number" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/banco_pagar_tarjeta"
+            android:text="@string/Debe"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/deuda_en_tarjeta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView1"
+            android:layout_alignBottom="@+id/textView1"
+            android:layout_centerHorizontal="true"
+            android:text="Medium Text"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
     </RelativeLayout>
 

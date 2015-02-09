@@ -42,7 +42,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/tarjeta_num"
+        android:id="@+id/tarjeta_num_pagar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -56,7 +56,7 @@
         android:id="@+id/edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tarjeta_num"
+        android:layout_below="@+id/tarjeta_num_pagar"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
         android:onClick="ver"

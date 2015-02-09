@@ -39,7 +39,7 @@ public class Info extends Activity {
 			{    
 					//Nuevo elemento a la lista
 				
-					datos.add(new Lista_E(rs.get(i),rs.get(i+1),rs.get(i+2)));
+					datos.add(new Lista_E(rs.get(i),rs.get(i+1),rs.get(i+2),rs.get(i+3)));
 				
 				
         	}
@@ -60,10 +60,12 @@ public class Info extends Activity {
 		   
 				TextView textoid=(TextView)view.findViewById(R.id.id_item);
 				textoid.setText(((Lista_E)entrada).getId());
-	            TextView texto1 = (TextView) view.findViewById(R.id.banco); 
+	            TextView texto1 = (TextView) view.findViewById(R.id.deuda); 
 	            texto1.setText(((Lista_E) entrada).getNombre()); 
-	            TextView texto2=(TextView)view.findViewById(R.id.tarjeta_num);
+	            TextView texto2=(TextView)view.findViewById(R.id.tarjeta_num_pagar);
 	            texto2.setText(((Lista_E) entrada).getDeuda());
+	            TextView texto3=(TextView)view.findViewById(R.id.estado);
+	            texto3.setText(((Lista_E)entrada).getEstado());
 	            
 
 	            

@@ -30,7 +30,7 @@ public class Ver_tarjetas extends Activity {
 		Context context = getApplicationContext();
 		int duration = Toast.LENGTH_SHORT;
 		DB_Manager manager=new DB_Manager(this);
-		rs=manager.ver_tarjetas(this);
+		rs=manager.ver_tarjetas(this,pref.getString("id", ""));
 		
 		
 		if(!rs.isEmpty()){
@@ -38,7 +38,7 @@ public class Ver_tarjetas extends Activity {
 			{    
 					//Nuevo elemento a la lista
 				
-					datos.add(new Lista_Tarjeta(rs.get(i),rs.get(i+1),rs.get(i+2)));
+					datos.add(new Lista_Tarjeta(rs.get(i),rs.get(i+1),rs.get(i+2),rs.get(i+3)));
 				
 				
         	}
@@ -56,12 +56,14 @@ public class Ver_tarjetas extends Activity {
 		@Override
 			public void onEntrada(Object entrada, View view) {
 				// ve esto  mas corto  Toast.makeText(arg0.getContext(), "FUNCIONO :): " + arg0.getItemAtPosition(arg2).toString(), Toast.LENGTH_SHORT).show();
-			TextView banco=(TextView)view.findViewById(R.id.banco_tarjeta);
+			TextView banco=(TextView)view.findViewById(R.id.banco_pagar_tarjeta);
 			banco.setText(((Lista_Tarjeta)entrada).getBanco());
-            TextView texto1 = (TextView) view.findViewById(R.id.tarjeta_num); 
+            TextView texto1 = (TextView) view.findViewById(R.id.tarjeta_num_pagar); 
             texto1.setText(((Lista_Tarjeta) entrada).getNumero()); 
             TextView texto2=(TextView)view.findViewById(R.id.id_tarjeta);
             texto2.setText(((Lista_Tarjeta) entrada).getId());
+            TextView texto3=(TextView)view.findViewById(R.id.deuda_en_tarjeta);
+            texto3.setText(((Lista_Tarjeta)entrada).getDeuda());
 				
 	            
 
@@ -71,7 +73,7 @@ public class Ver_tarjetas extends Activity {
     	lista.setOnItemClickListener(new OnItemClickListener() { 
     		
       		 public void onItemClick(AdapterView<?> pariente, View view, int posicion, long id) {
-         	 Lista_Tarjeta item = (Lista_Tarjeta) pariente.getItemAtPosition(posicion); 
+         	 Lista_Tarjeta item = (Lista_Tarjeta) pariente.getItemAtPosition(posicion);
          	 //Toast.makeText(getApplicationContext(), "Milliseconds= "+item.getId(), Toast.LENGTH_SHORT).show();
          	SharedPreferences pref=getSharedPreferences("tarjeta", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor=pref.edit();

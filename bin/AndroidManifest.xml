@@ -69,6 +69,10 @@
             android:name=".Ver_tarjetas"
             android:label="@string/title_activity_ver_tarjetas" >
         </activity>
+        <activity
+            android:name=".Pagar"
+            android:label="@string/title_activity_pagar" >
+        </activity>
     </application>
 
 </manifest>

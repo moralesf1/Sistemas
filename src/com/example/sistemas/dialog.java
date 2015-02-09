@@ -24,7 +24,7 @@ public class dialog extends DialogFragment {
 		getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
 		 View v = inflater.inflate(R.layout.activity_dialog, container, false);
 		Button agregar=(Button)v.findViewById(R.id.agregar_tar);
-		Button cancelar=(Button)v.findViewById(R.id.cancel_tar);
+		
 		final EditText tarjeta=(EditText)v.findViewById(R.id.edit_tarjeta);
 		final EditText numero=(EditText)v.findViewById(R.id.numero_tarjeta);
 		agregar.setOnClickListener(new OnClickListener() {
@@ -38,14 +38,8 @@ public class dialog extends DialogFragment {
 				
 			}
 		});
-		cancelar.setOnClickListener(new OnClickListener() {
-			
-			
-			public void onClick(View v) {
-				Toast.makeText(getActivity().getApplicationContext(),"cancelar", Toast.LENGTH_SHORT).show();
-				
-			}
-		});
+		
+		
 		
 		return v;
 		
