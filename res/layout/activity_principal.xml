@@ -2,52 +2,85 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@color/background"
+   android:paddingBottom="@dimen/ver_deuda_v"
+    android:paddingLeft="@dimen/ver_deuda_h"
+    android:paddingRight="@dimen/ver_deuda_h"
+    android:paddingTop="@dimen/ver_deuda_v"
     tools:context="com.example.sistemas.Principal" >
-
-    <ImageButton
-        android:id="@+id/img_opc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:background="#000000"
-        android:contentDescription="@string/content_opc"
-        android:onClick="verificar"
-        android:src="@drawable/ic_action_settings" />
 
     <TextView
         android:id="@+id/fechas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button1"
+        android:layout_below="@+id/edit"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="58dp"
         android:text=""
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@color/ver"
+        android:gravity="center_horizontal|center_vertical"
+        android:orientation="horizontal" >
+	
+        <ImageButton
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="dialog"
+            android:src="@drawable/creditcard"
+            android:contentDescription="@string/content_opc"
+            android:text="@string/tarjeta" />
+
+        
+
+    </LinearLayout>
+
     <TextView
-        android:id="@+id/mount"
-        android:textColor="@color/editText"
+        android:id="@+id/tarjeta_num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp"
         android:text="@string/titulo"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/editText" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/mount"
+        android:layout_below="@+id/tarjeta_num"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="32dp"
         android:onClick="ver"
         android:text="@string/ver_deudas" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:onClick="ver_tarjeta"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/fechas"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="22dp"
+        android:text="@string/ver_tarjetas" />
+
+    <ImageButton
+        android:id="@+id/img_opc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/background"
+        android:contentDescription="@string/content_opc"
+        android:onClick="verificar"
+        android:src="@drawable/ic_action_settings" />
 
 </RelativeLayout>

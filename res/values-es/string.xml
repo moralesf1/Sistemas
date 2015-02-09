@@ -39,5 +39,5 @@
  	<color name="background">#3498db</color>
  	<color name="login">#34495e</color>
  	<color name="txtboton">#ffffff</color>
- 	
+ 	<color name="ver">#000000</color>
 </resources>

@@ -30,7 +30,7 @@ public class Addgastos extends Activity {
 		SharedPreferences Pref =getSharedPreferences("session",Context.MODE_PRIVATE);
         String id=Pref.getString("id", "");
       	DB_Manager manager=new DB_Manager(this);
-    	manager.registrar_deuda(nombre_gasto.getText().toString(), monto.getText().toString(), spinner.getSelectedItem().toString(), id);
+    	manager.registrar_deuda(nombre_gasto.getText().toString(), monto.getText().toString(), spinner.getSelectedItemPosition(), id,this.getApplicationContext());
     	intent=new Intent(Addgastos.this,Info.class);
     	startActivity(intent);
     	finish();

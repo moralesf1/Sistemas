@@ -55,7 +55,7 @@
             android:background="#000000" >
 
             <ImageButton
-                android:id="@+id/button1"
+                android:id="@+id/edit"
                 android:layout_width="114dp"
                 android:layout_height="50dp"
                 android:background="#000000"

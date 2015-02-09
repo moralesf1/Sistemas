@@ -11,27 +11,17 @@
         android:columnCount="1" >
 
         <TextView
-            android:id="@+id/mount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="51dp"
-            android:text="aaaaa"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        <TextView
-            android:id="@+id/miembro_nombre"
+            android:id="@+id/banco"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_alignTop="@+id/mount"
+            android:layout_alignTop="@+id/tarjeta_num"
             android:padding="15dp"
             android:textSize="17sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/nombre_banco"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -39,21 +29,32 @@
             android:text="@string/ref_deuda" />
 
         <TextView
+            android:id="@+id/id_item"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/banco"
+            android:layout_alignBottom="@+id/banco"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/tarjeta_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView2"
+            android:layout_below="@+id/textView2"
+            android:layout_marginTop="32dp"
+            android:text="aaaaa"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
+            android:layout_marginRight="18dp"
             android:text="@string/moneda" />
-
-        <TextView
-            android:id="@+id/id_item"
-            android:visibility="invisible"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/miembro_nombre"
-            android:layout_alignBottom="@+id/miembro_nombre"
-            android:layout_centerHorizontal="true" />
 
     </RelativeLayout>
 

@@ -4,8 +4,10 @@ import java.util.ArrayList;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.Toast;
 
 public class DB_Manager {
 	public static final String TABLE_NAME="usuario";
@@ -29,9 +31,10 @@ public class DB_Manager {
 									 "prioridad text not null);";
 	
 	public static final String tarjetas="create table tarjetas ("+
-										"_id integer primary key autoincrement,"+
-										"id_usuario integer not null,"+
-										"numero_tarjeta integer not null);";
+										"_id integer primary key autoincrement," +
+										" banco text not null, "+
+										" id_usuario integer not null,"+
+										" numero_tarjeta integer not null);";
 	
 	private Db helper;
 	private SQLiteDatabase db;
@@ -44,14 +47,31 @@ public class DB_Manager {
         
         
 	}
-	public void registrar_deuda(String nombre,String monto,String prioridad,String id_user){
+	public void registrar_deuda(String nombre,String monto,int prioridad,String id_user,Context context){
+		
 		ContentValues valores=new ContentValues();
 		valores.put("id_usuario", id_user);
 		valores.put("nombre", nombre);
 		valores.put("deuda", monto);
-		valores.put("prioridad", prioridad);
+		if(prioridad==0){
+			valores.put("prioridad",3);
+		}
+		else if(prioridad!=0){
+			valores.put("prioridad",prioridad);
+		}
+		
+		
+		
 		db.insert("deudas",null,valores);
 		
+		
+	}
+	public void registrar_tarjeta(Context context,String banco,String numero_tarjeta,String id){
+		ContentValues valores=new ContentValues();
+		valores.put("banco", banco);
+		valores.put("id_usuario", id);
+		valores.put("numero_tarjeta", numero_tarjeta);
+		db.insert("tarjetas", null, valores);
 		
 	}
 	public ContentValues generarContentValues_registro(String nombre,String clave,String correo){
@@ -104,6 +124,40 @@ public class DB_Manager {
 		ContentValues valores=new ContentValues();
 		valores.put("clave",md5.encriptadoMD5(pass));
 		db.execSQL("Update usuario Set clave='"+valores.get("clave")+"' where _id="+id);
+	}
+	public ArrayList<String> select_deuda(String id_usuario,String id_item,Context context){
+		Cursor cursor;
+		Toast.makeText(context,"esto---> "+id_item, Toast.LENGTH_SHORT).show();
+		ArrayList<String> rs=new ArrayList<String>();
+		cursor=db.rawQuery("Select nombre,deuda,prioridad from deudas where _id="+id_item+" and id_usuario="+id_usuario,null);
+		while(cursor.moveToNext()){
+			rs.add(cursor.getString(0));
+			rs.add(cursor.getString(1));
+			rs.add(cursor.getString(2));
+		}
+		
+		return rs;
+	}
+	public void up_deuda(String nombre,String deuda,String prioridad,String id,String id_usuario){
+		db.execSQL("Update deudas set nombre='"+nombre+"', deuda='"+deuda+"', prioridad='"+prioridad+"' where _id='"+id+"' and " +
+				"id_usuario='"+id_usuario+"'");
+	}
+	public void delete(String tabla,String id,Context context){
+		//Toast.makeText(context,"esto---> Delete from "+tabla+" where _id="+id, Toast.LENGTH_SHORT).show();
+		db.execSQL("Delete from "+tabla+" where _id="+id);
+	}
+	public ArrayList<String> ver_tarjetas(Context context){
+		Cursor cursor;
+		ArrayList<String> rs=new ArrayList<String>();
+		cursor=db.rawQuery("Select _id,banco,numero_tarjeta from tarjetas",null);
+		while(cursor.moveToNext()){
+			rs.add(cursor.getString(0));
+			rs.add(cursor.getString(1));
+			rs.add(cursor.getString(2));
+			
+		}
+		//Toast.makeText(context,"esto--->"+rs, Toast.LENGTH_SHORT).show();
+		return rs;
 	}
 }
 

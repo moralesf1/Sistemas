@@ -9,7 +9,7 @@
     tools:context="com.example.sistemas.Opciones" >
 
     <TextView
-        android:id="@+id/mount"
+        android:id="@+id/tarjeta_num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/lang"
@@ -52,12 +52,12 @@
         android:text="@string/lenguaje" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/edit"
         android:layout_width="wrap_content"
         android:onClick="controls"
         android:layout_height="wrap_content"
         android:drawableLeft="@drawable/ic_action_accounts"
-        android:layout_above="@+id/mount"
+        android:layout_above="@+id/tarjeta_num"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="86dp"
         android:text="@string/ctrl_cuenta" />

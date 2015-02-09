@@ -45,16 +45,24 @@
     <string name="modificar">Modificar</string>
     <string name="eliminar">Eliminar</string>
     <string name="pagar">Pagar</string>
-    
+
     <!-- Colores de los elementos -->
     <color name="editText">#ecf0f1</color>
     <color name="background">#3498db</color>
     <color name="login">#34495e</color>
     <color name="txtboton">#ffffff</color>
     <color name="white">#E6E3F2FD</color>
+    <color name="ver">#000000</color>
 
     <string name="ref_deuda">Referencia de la deuda</string>
     <string name="moneda">Monto en Bs</string>
     <string name="title_activity_submenu">Submenu</string>
+    <string name="tarjeta">"Agregar Tarjeta"</string>
+    <string name="title_activity_dialog">Dialog</string>
+    <string name="numero_tarjeta">Numero de Tarjeta</string>
+    <string name="title_activity_dialogo">Dialogo</string>
+    <string name="ver_tarjetas">Ver Tarjetas</string>
+    <string name="tajerta_number">Numero de la tarjeta</string>
+    <string name="banco">Banco</string>
 
 </resources>

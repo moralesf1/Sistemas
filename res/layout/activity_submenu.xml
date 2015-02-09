@@ -9,40 +9,70 @@
     tools:context="com.example.sistemas.Submenu" >
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button3"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="40dp"
-        android:text="@string/eliminar" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:drawableLeft="@drawable/ic_action_back"
+        android:onClick="atras"
+        android:text="@string/regresar" />
+
+    <EditText
+        android:id="@+id/monto_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/nombre_edit"
+        android:layout_below="@+id/nombre_edit"
+        android:layout_marginTop="52dp"
+        android:ems="10"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/nombre_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="53dp"
+        android:ems="10"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="update_deuda"
+        android:layout_alignBaseline="@+id/button3"
+        android:layout_alignBottom="@+id/button3"
+        android:layout_alignRight="@+id/prioridad_edit"
+        android:layout_marginRight="16dp"
+        android:text="@string/modificar" />
+
+    <Spinner
+        android:id="@+id/prioridad_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button3"
+        android:layout_centerVertical="true" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="97dp"
+        android:layout_alignLeft="@+id/button4"
+        android:layout_below="@+id/prioridad_edit"
+        android:layout_marginTop="22dp"
         android:text="@string/pagar" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="177dp"
-        android:layout_toLeftOf="@+id/button3"
-        android:text="@string/modificar" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:onClick="atras"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:drawableLeft="@drawable/ic_action_back"
-        android:text="@string/regresar" />
+        android:onClick="delete"
+        android:layout_above="@+id/button4"
+        android:layout_marginBottom="24dp"
+        android:layout_toLeftOf="@+id/edit"
+        android:text="@string/eliminar" />
 
 </RelativeLayout>

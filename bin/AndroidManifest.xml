@@ -57,6 +57,14 @@
             android:name=".Submenu"
             android:label="@string/title_activity_submenu" >
         </activity>
+        <activity
+            android:name=".Dialog"
+            android:label="@string/title_activity_dialog" >
+        </activity>
+        <activity
+            android:name=".Dialogo"
+            android:label="@string/title_activity_dialogo" >
+        </activity>
     </application>
 
 </manifest>

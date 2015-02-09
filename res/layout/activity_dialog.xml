@@ -1,0 +1,73 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="bottom"
+    android:background="@color/background"
+    android:gravity="center_horizontal|clip_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/ver_deuda_v"
+    android:paddingLeft="@dimen/ver_deuda_h"
+    android:paddingRight="@dimen/ver_deuda_h"
+    android:paddingTop="@dimen/ver_deuda_v"
+    tools:context="com.example.sistemas.Dialog" >
+
+    <TextView
+        android:id="@+id/nombre_banco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="46dp"
+        android:text="Banco"
+        android:textColor="@color/editText" />
+
+    <EditText
+        android:id="@+id/edit_tarjeta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/editText"
+        android:ems="10"
+        android:inputType="text" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/numero_tarjeta"
+        android:textColor="@color/editText" />
+
+    <EditText
+        android:id="@+id/numero_tarjeta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/editText"
+        android:ems="10"
+        android:inputType="number" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center" >
+
+        <Button
+            android:id="@+id/agregar_tar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/agregar" />
+
+        <Button
+            android:id="@+id/cancel_tar"
+            android:layout_width="wrap_content"
+       
+            android:layout_height="wrap_content"
+            android:text="@string/cancelar" />
+    </LinearLayout>
+
+</LinearLayout>

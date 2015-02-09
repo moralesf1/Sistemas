@@ -22,7 +22,8 @@ public final class R {
         public static final int editText=0x7f070000;
         public static final int login=0x7f070002;
         public static final int txtboton=0x7f070003;
-        public static final int white=0x7f070004;
+        public static final int ver=0x7f070004;
+        public static final int white=0x7f070005;
     }
     public static final class dimen {
         public static final int activity_frag=0x7f050002;
@@ -42,74 +43,91 @@ public final class R {
         public static final int ver_deuda_v=0x7f050003;
     }
     public static final class drawable {
-        public static final int ic_action_accept=0x7f020000;
-        public static final int ic_action_accounts=0x7f020001;
-        public static final int ic_action_back=0x7f020002;
-        public static final int ic_action_new=0x7f020003;
-        public static final int ic_action_new_account=0x7f020004;
-        public static final int ic_action_settings=0x7f020005;
-        public static final int ic_launcher=0x7f020006;
+        public static final int creditcard=0x7f020000;
+        public static final int ic_action_accept=0x7f020001;
+        public static final int ic_action_accounts=0x7f020002;
+        public static final int ic_action_back=0x7f020003;
+        public static final int ic_action_new=0x7f020004;
+        public static final int ic_action_new_account=0x7f020005;
+        public static final int ic_action_settings=0x7f020006;
+        public static final int ic_launcher=0x7f020007;
     }
     public static final class id {
         public static final int LinearLayout1=0x7f0a000c;
-        public static final int RelativeLayout1=0x7f0a001f;
-        public static final int action_settings=0x7f0a0023;
+        public static final int RelativeLayout1=0x7f0a0029;
+        public static final int action_settings=0x7f0a002e;
         public static final int agregar_deu=0x7f0a0006;
-        public static final int agregar_gasto=0x7f0a000f;
-        public static final int button1=0x7f0a0007;
+        public static final int agregar_gasto=0x7f0a0014;
+        public static final int agregar_tar=0x7f0a0010;
+        public static final int banco=0x7f0a002a;
+        public static final int banco_tarjeta=0x7f0a002c;
+        public static final int button1=0x7f0a001c;
         public static final int button2=0x7f0a000b;
-        public static final int button3=0x7f0a001d;
-        public static final int button4=0x7f0a001e;
-        public static final int cancel=0x7f0a001c;
+        public static final int button3=0x7f0a0026;
+        public static final int button4=0x7f0a0023;
+        public static final int cancel=0x7f0a0022;
+        public static final int cancel_tar=0x7f0a0011;
         public static final int change_pass=0x7f0a0009;
-        public static final int cierre_sesion=0x7f0a0015;
-        public static final int correo=0x7f0a001a;
-        public static final int fechas=0x7f0a0017;
-        public static final int id_item=0x7f0a0022;
-        public static final int img_opc=0x7f0a0016;
-        public static final int lang=0x7f0a0014;
-        public static final int linearLayout2=0x7f0a000e;
-        public static final int lista=0x7f0a000d;
-        public static final int login=0x7f0a0013;
-        public static final int miembro_nombre=0x7f0a0020;
+        public static final int cierre_sesion=0x7f0a001a;
+        public static final int correo=0x7f0a0020;
+        public static final int edit=0x7f0a0007;
+        public static final int edit_tarjeta=0x7f0a000e;
+        public static final int fechas=0x7f0a001b;
+        public static final int id_item=0x7f0a002b;
+        public static final int id_tarjeta=0x7f0a002d;
+        public static final int img_opc=0x7f0a001d;
+        public static final int lang=0x7f0a0019;
+        public static final int linearLayout2=0x7f0a0013;
+        public static final int lista=0x7f0a0012;
+        public static final int login=0x7f0a0018;
         public static final int monto=0x7f0a0004;
-        public static final int mount=0x7f0a0002;
+        public static final int monto_edit=0x7f0a0024;
+        public static final int nombre_banco=0x7f0a000d;
+        public static final int nombre_edit=0x7f0a0025;
         public static final int nombre_gasto=0x7f0a0001;
-        public static final int pass=0x7f0a0011;
-        public static final int pass_reg=0x7f0a0019;
+        public static final int numero_tarjeta=0x7f0a000f;
+        public static final int pass=0x7f0a0016;
+        public static final int pass_reg=0x7f0a001f;
         public static final int prioridad=0x7f0a0005;
+        public static final int prioridad_edit=0x7f0a0027;
         public static final int re_change=0x7f0a000a;
-        public static final int reg=0x7f0a0012;
-        public static final int registrar=0x7f0a001b;
+        public static final int reg=0x7f0a0017;
+        public static final int registrar=0x7f0a0021;
         public static final int relativeLayout1=0x7f0a0000;
-        public static final int textView1=0x7f0a0021;
+        public static final int tarjeta_num=0x7f0a0002;
         public static final int textView2=0x7f0a0003;
         public static final int textView3=0x7f0a0008;
-        public static final int user=0x7f0a0010;
-        public static final int user_reg=0x7f0a0018;
+        public static final int user=0x7f0a0015;
+        public static final int user_reg=0x7f0a001e;
+        public static final int ver_tarjetas=0x7f0a0028;
     }
     public static final class layout {
         public static final int activity_addgastos=0x7f030000;
         public static final int activity_control=0x7f030001;
-        public static final int activity_info=0x7f030002;
-        public static final int activity_inicio=0x7f030003;
-        public static final int activity_opciones=0x7f030004;
-        public static final int activity_principal=0x7f030005;
-        public static final int activity_registro=0x7f030006;
-        public static final int activity_submenu=0x7f030007;
-        public static final int formatolista=0x7f030008;
+        public static final int activity_dialog=0x7f030002;
+        public static final int activity_info=0x7f030003;
+        public static final int activity_inicio=0x7f030004;
+        public static final int activity_opciones=0x7f030005;
+        public static final int activity_principal=0x7f030006;
+        public static final int activity_registro=0x7f030007;
+        public static final int activity_submenu=0x7f030008;
+        public static final int activity_ver_tarjeta=0x7f030009;
+        public static final int formatolista=0x7f03000a;
+        public static final int formatolista_tarjeta=0x7f03000b;
     }
     public static final class menu {
         public static final int addgastos=0x7f090000;
         public static final int control=0x7f090001;
-        public static final int info=0x7f090002;
-        public static final int inicio=0x7f090003;
-        public static final int lista_gastos=0x7f090004;
-        public static final int menu=0x7f090005;
-        public static final int opciones=0x7f090006;
-        public static final int principal=0x7f090007;
-        public static final int registro=0x7f090008;
-        public static final int submenu=0x7f090009;
+        public static final int dialog=0x7f090002;
+        public static final int dialogo=0x7f090003;
+        public static final int info=0x7f090004;
+        public static final int inicio=0x7f090005;
+        public static final int lista_gastos=0x7f090006;
+        public static final int menu=0x7f090007;
+        public static final int opciones=0x7f090008;
+        public static final int principal=0x7f090009;
+        public static final int registro=0x7f09000a;
+        public static final int submenu=0x7f09000b;
     }
     public static final class string {
         public static final int action_settings=0x7f060002;
@@ -121,6 +139,7 @@ public final class R {
  Strings de los elementos 
          */
         public static final int app_name=0x7f060000;
+        public static final int banco=0x7f060037;
         public static final int boton=0x7f060004;
         public static final int cambio_lang=0x7f06000c;
         public static final int cancelar=0x7f06000b;
@@ -146,6 +165,7 @@ public final class R {
         public static final int monto=0x7f060010;
         public static final int not_session=0x7f06001a;
         public static final int notmatch=0x7f060015;
+        public static final int numero_tarjeta=0x7f060033;
         public static final int pagar=0x7f06001f;
         public static final int re_change_pass=0x7f060013;
         public static final int ref_deuda=0x7f06002e;
@@ -153,8 +173,12 @@ public final class R {
         public static final int registrar=0x7f06000a;
         public static final int regresar=0x7f06000e;
         public static final int salir=0x7f060021;
+        public static final int tajerta_number=0x7f060036;
+        public static final int tarjeta=0x7f060031;
         public static final int title_activity_addgastos=0x7f060029;
         public static final int title_activity_control=0x7f06002d;
+        public static final int title_activity_dialog=0x7f060032;
+        public static final int title_activity_dialogo=0x7f060034;
         public static final int title_activity_info=0x7f06002b;
         public static final int title_activity_lista_gastos=0x7f06002a;
         public static final int title_activity_menu=0x7f060027;
@@ -165,6 +189,7 @@ public final class R {
         public static final int titulo=0x7f060024;
         public static final int usuario=0x7f060001;
         public static final int ver_deudas=0x7f06001c;
+        public static final int ver_tarjetas=0x7f060035;
     }
     public static final class style {
         /** 

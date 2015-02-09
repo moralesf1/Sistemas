@@ -33,12 +33,11 @@ public class Info extends Activity {
 		DB_Manager manager=new DB_Manager(this);
 		rs=manager.deudas(id);
 		Toast toast;
-		toast = Toast.makeText(context,"esto--->"+rs.get(3), duration);
-		toast.show();
+		
 		if(!rs.isEmpty()){
 			for(int i=0; i<rs.size()-2; i=i+3)
 			{    
-				//Nuevo elemento a la lista
+					//Nuevo elemento a la lista
 				
 					datos.add(new Lista_E(rs.get(i),rs.get(i+1),rs.get(i+2)));
 				
@@ -61,9 +60,9 @@ public class Info extends Activity {
 		   
 				TextView textoid=(TextView)view.findViewById(R.id.id_item);
 				textoid.setText(((Lista_E)entrada).getId());
-	            TextView texto1 = (TextView) view.findViewById(R.id.miembro_nombre); 
+	            TextView texto1 = (TextView) view.findViewById(R.id.banco); 
 	            texto1.setText(((Lista_E) entrada).getNombre()); 
-	            TextView texto2=(TextView)view.findViewById(R.id.mount);
+	            TextView texto2=(TextView)view.findViewById(R.id.tarjeta_num);
 	            texto2.setText(((Lista_E) entrada).getDeuda());
 	            
 
@@ -74,10 +73,12 @@ public class Info extends Activity {
     		
       		 public void onItemClick(AdapterView<?> pariente, View view, int posicion, long id) {
          	 Lista_E item = (Lista_E) pariente.getItemAtPosition(posicion); 
-         	 Toast.makeText(getApplicationContext(), "Milliseconds= "+item.getId(), Toast.LENGTH_SHORT).show();
+         	 //Toast.makeText(getApplicationContext(), "Milliseconds= "+item.getId(), Toast.LENGTH_SHORT).show();
          	SharedPreferences pref=getSharedPreferences("item_selected", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor=pref.edit();
             editor.putString("id_item", item.getId());
+            editor.putString("nombre_item", item.getNombre());
+            editor.putString("monto", item.getDeuda());
             editor.commit();
             Intent intent=new Intent(Info.this,Submenu.class);
             startActivity(intent);

@@ -18,7 +18,7 @@
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/mount"
+            android:id="@+id/tarjeta_num"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/change_pass"
@@ -57,7 +57,7 @@
             android:gravity="center_horizontal" >
 
             <Button
-                android:id="@+id/button1"
+                android:id="@+id/edit"
                 android:layout_marginRight="20dp"
                 android:onClick="update"
                 android:drawableLeft="@drawable/ic_action_accept"
