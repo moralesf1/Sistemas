@@ -54,12 +54,12 @@ public final class R {
     }
     public static final class id {
         public static final int LinearLayout1=0x7f0a000c;
-        public static final int RelativeLayout1=0x7f0a0029;
-        public static final int action_settings=0x7f0a002e;
+        public static final int RelativeLayout1=0x7f0a0028;
+        public static final int action_settings=0x7f0a002d;
         public static final int agregar_deu=0x7f0a0006;
         public static final int agregar_gasto=0x7f0a0014;
         public static final int agregar_tar=0x7f0a0010;
-        public static final int banco=0x7f0a002a;
+        public static final int banco=0x7f0a0029;
         public static final int banco_tarjeta=0x7f0a002c;
         public static final int button1=0x7f0a001c;
         public static final int button2=0x7f0a000b;
@@ -73,8 +73,8 @@ public final class R {
         public static final int edit=0x7f0a0007;
         public static final int edit_tarjeta=0x7f0a000e;
         public static final int fechas=0x7f0a001b;
-        public static final int id_item=0x7f0a002b;
-        public static final int id_tarjeta=0x7f0a002d;
+        public static final int id_item=0x7f0a002a;
+        public static final int id_tarjeta=0x7f0a002b;
         public static final int img_opc=0x7f0a001d;
         public static final int lang=0x7f0a0019;
         public static final int linearLayout2=0x7f0a0013;
@@ -99,7 +99,6 @@ public final class R {
         public static final int textView3=0x7f0a0008;
         public static final int user=0x7f0a0015;
         public static final int user_reg=0x7f0a001e;
-        public static final int ver_tarjetas=0x7f0a0028;
     }
     public static final class layout {
         public static final int activity_addgastos=0x7f030000;
@@ -111,7 +110,7 @@ public final class R {
         public static final int activity_principal=0x7f030006;
         public static final int activity_registro=0x7f030007;
         public static final int activity_submenu=0x7f030008;
-        public static final int activity_ver_tarjeta=0x7f030009;
+        public static final int activity_ver_tarjetas=0x7f030009;
         public static final int formatolista=0x7f03000a;
         public static final int formatolista_tarjeta=0x7f03000b;
     }
@@ -128,6 +127,7 @@ public final class R {
         public static final int principal=0x7f090009;
         public static final int registro=0x7f09000a;
         public static final int submenu=0x7f09000b;
+        public static final int ver_tarjetas=0x7f09000c;
     }
     public static final class string {
         public static final int action_settings=0x7f060002;
@@ -186,6 +186,7 @@ public final class R {
         public static final int title_activity_principal=0x7f060028;
         public static final int title_activity_registro=0x7f060025;
         public static final int title_activity_submenu=0x7f060030;
+        public static final int title_activity_ver_tarjetas=0x7f060038;
         public static final int titulo=0x7f060024;
         public static final int usuario=0x7f060001;
         public static final int ver_deudas=0x7f06001c;

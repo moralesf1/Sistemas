@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-   android:paddingBottom="@dimen/ver_deuda_v"
+    android:paddingBottom="@dimen/ver_deuda_v"
     android:paddingLeft="@dimen/ver_deuda_h"
     android:paddingRight="@dimen/ver_deuda_h"
     android:paddingTop="@dimen/ver_deuda_v"

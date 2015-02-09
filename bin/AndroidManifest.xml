@@ -65,6 +65,10 @@
             android:name=".Dialogo"
             android:label="@string/title_activity_dialogo" >
         </activity>
+        <activity
+            android:name=".Ver_tarjetas"
+            android:label="@string/title_activity_ver_tarjetas" >
+        </activity>
     </application>
 
 </manifest>

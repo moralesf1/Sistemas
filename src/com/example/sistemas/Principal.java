@@ -51,7 +51,7 @@ public class Principal extends Activity {
 		dial.show(getFragmentManager(),null);
 	}
 	public void ver_tarjeta(View v){
-		ver_tarjeta ver=new ver_tarjeta();
-		ver.show(getFragmentManager(), null);
+		startActivity(new Intent(Principal.this,Ver_tarjetas.class));
+		finish();
 	}
 }

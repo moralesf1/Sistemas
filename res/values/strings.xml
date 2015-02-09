@@ -64,5 +64,6 @@
     <string name="ver_tarjetas">Ver Tarjetas</string>
     <string name="tajerta_number">Numero de la tarjeta</string>
     <string name="banco">Banco</string>
+    <string name="title_activity_ver_tarjetas">Ver_tarjetas</string>
 
 </resources>
