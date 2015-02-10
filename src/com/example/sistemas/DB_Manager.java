@@ -44,8 +44,15 @@ public class DB_Manager {
 										  " id_usuario integer not null," +
 										  " nombre text not null," +
 										  " imagen text not null," +
-										  " prioridad text not null," +
-										  " subcategoria text not null);";
+										  " prioridad text not null);";
+	
+	public static final String subcategorias="create table categoria (" +
+											 " _id integer primary key autoincrement," +
+											 " id_usuario integer not null," +
+											 " nombre text not null," +
+											 " imagen text not null," +
+											 " prioridad text not null);";
+	
 	private Db helper;
 	private SQLiteDatabase db;
 	
