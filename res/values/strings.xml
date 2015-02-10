@@ -70,5 +70,8 @@
     <string name="tarjeta_solo">Tarjeta</string>
     <string name="Aceptar">Aceptar</string>
     <string name="Debe">Debe</string>
+    <string name="Realizado_por">Felix Morales</string>
+    <string name="deuda_desde">Deuda desde</string>
+    <string name="title_activity_dialog_info_tarjeta">Dialog_info_tarjeta</string>
 
 </resources>

@@ -24,7 +24,7 @@ public class Ver_tarjetas extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_info);
+		setContentView(R.layout.activity_ver_tarjetas);
 		SharedPreferences pref=getSharedPreferences("session", Context.MODE_PRIVATE);
 		String id=pref.getString("id", "");
 		Context context = getApplicationContext();
@@ -34,7 +34,7 @@ public class Ver_tarjetas extends Activity {
 		
 		
 		if(!rs.isEmpty()){
-			for(int i=0; i<rs.size()-2; i=i+3)
+			for(int i=0; i<rs.size()-2; i=i+4)
 			{    
 					//Nuevo elemento a la lista
 				
@@ -81,7 +81,8 @@ public class Ver_tarjetas extends Activity {
             editor.putString("nombre_Banco", item.getBanco());
             editor.putString("numero", item.getNumero());
             editor.commit();
-            
+            Dialog_info_tarjeta dial=new Dialog_info_tarjeta();
+            dial.show(getFragmentManager(), null);
             
              
 		             
@@ -90,10 +91,12 @@ public class Ver_tarjetas extends Activity {
 		
 	}
 	public void nuevo(View v){
-		
+		dialog dialogo=new dialog();
+		dialogo.show(getFragmentManager(), null);
 	}
 	public void atras(View v){
-		
+		startActivity(new Intent(Ver_tarjetas.this,Principal.class));
+		finish();
 	}
 	
 	

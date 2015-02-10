@@ -41,13 +41,14 @@ public class Submenu extends Activity {
 		String id_item=pref2.getString("id_item", "vacio");
 		
 		rs=manager.select_deuda(pref.getString("id", ""), id_item,this.getApplicationContext());
-		
-		//Toast.makeText(this.getApplicationContext(),"id aqui---> "+rs.get(2), Toast.LENGTH_SHORT).show();
-		nombre_edit.setText(rs.get(0));
-		monto_edit.setText(rs.get(1));
-		prioridad_spinner.setSelection(Integer.parseInt(rs.get(2)));
-		
-		
+	
+		Toast.makeText(this.getApplicationContext(),"id aqui---> "+rs, Toast.LENGTH_SHORT).show();
+		if(!rs.isEmpty()){
+			nombre_edit.setText(rs.get(0));
+			monto_edit.setText(rs.get(1));
+			prioridad_spinner.setSelection(Integer.parseInt(rs.get(2)));
+			
+		}
 	}
 
 	public void atras(View v){

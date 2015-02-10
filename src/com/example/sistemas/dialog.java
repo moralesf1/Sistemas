@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -35,7 +36,7 @@ public class dialog extends DialogFragment {
 				SharedPreferences pref=getActivity().getSharedPreferences("session", Context.MODE_PRIVATE);
 				//Toast.makeText(context,"entro y mando esto "+pref.getString("id", ""), Toast.LENGTH_SHORT).show();
 				manager.registrar_tarjeta(context, tarjeta.getText().toString(),numero.getText().toString(),pref.getString("id",""));
-				
+				startActivity(new Intent(getActivity(),Ver_tarjetas.class));
 			}
 		});
 		

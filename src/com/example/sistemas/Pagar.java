@@ -4,11 +4,13 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnLongClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
@@ -30,18 +32,18 @@ public class Pagar extends Activity {
 		final Spinner spinner=(Spinner)findViewById(R.id.spinner_pagar);
 		
 		spinner.setClickable(true);
-		TextView pagar=(TextView)findViewById(R.id.edit_pagar);
+		
 		ArrayList<Lista_Tarjeta> datos = new ArrayList<Lista_Tarjeta>();
-		pagar.setEnabled(false);
+		
 		RadioButton radio1=(RadioButton)findViewById(R.id.radio_dinero);
 		SharedPreferences pref=getSharedPreferences("session", Context.MODE_PRIVATE);
 		DB_Manager manager=new DB_Manager(this);
 		ArrayList<String> rs=new ArrayList<String>();
 		rs=manager.ver_tarjetas(this,pref.getString("id",""));
-		Toast.makeText(this.getApplicationContext(),"id aqui---> "+rs.get(1), Toast.LENGTH_SHORT).show();
+		//Toast.makeText(this.getApplicationContext(),"id aqui---> "+rs.get(1), Toast.LENGTH_SHORT).show();
 		radio1.setChecked(false);
 		if(!rs.isEmpty()){
-			for(int i=0; i<rs.size()-2; i=i+3)
+			for(int i=0; i<rs.size()-2; i=i+4)
 			{    
 					//Nuevo elemento a la lista
 				
@@ -86,6 +88,7 @@ public class Pagar extends Activity {
 				
 			}
 		});
+		
 	}
 	public void select_dinero(View v){
 		RadioButton radio2=(RadioButton)findViewById(R.id.radio_tarjeta);
@@ -93,18 +96,37 @@ public class Pagar extends Activity {
 		Spinner spinner=(Spinner)findViewById(R.id.spinner_pagar);
 		spinner.setClickable(false);
 		spinner.setAdapter(null);
-		TextView pagar=(TextView)findViewById(R.id.edit_pagar);
-		pagar.setEnabled(true);
+		
+		
 	}
 	public void pagar_tarjeta(View v){
-		TextView texto=(TextView)findViewById(R.id.id_tarjeta_apagar);
-		ArrayList<String> rs2=new ArrayList<String>();
-		String rs1;
+		RadioButton radio1=(RadioButton)findViewById(R.id.radio_tarjeta);
 		SharedPreferences pref=getSharedPreferences("session",Context.MODE_PRIVATE);
-		Spinner spinner=(Spinner)findViewById(R.id.spinner_pagar);
-		DB_Manager manager=new DB_Manager(this);
-		rs1=manager.ver_tarjeta_pagar(pref.getString("id",""),texto.getText().toString());
 		SharedPreferences pref2=getSharedPreferences("item_selected",Context.MODE_PRIVATE);
-		rs2=manager.select_deuda(pref.getString("id",""),pref2.getString("id_item",""),this);
+		DB_Manager manager=new DB_Manager(this);
+		if(radio1.isChecked()){
+			TextView texto=(TextView)findViewById(R.id.id_tarjeta_apagar);
+			ArrayList<String> rs2=new ArrayList<String>();
+			String rs1;
+			int deuda_total;
+			
+			
+			
+			rs1=manager.ver_tarjeta_pagar(pref.getString("id",""),texto.getText().toString());
+			
+			rs2=manager.select_deuda(pref.getString("id",""),pref2.getString("id_item",""),this);
+			deuda_total=Integer.parseInt(rs1)+Integer.parseInt(rs2.get(1).toString());
+			//Toast.makeText(this.getApplicationContext(),"id aqui---> "+rs2.get(1), Toast.LENGTH_SHORT).show();
+			manager.up_deuda_tarjeta(pref.getString("id",""),texto.getText().toString(),Integer.toString(deuda_total),pref2.getString("id_item",""),this,radio1.isChecked());
+		}
+		if(!radio1.isChecked()){
+			manager.up_deuda_tarjeta(pref.getString("id",""),"0","0",pref2.getString("id_item",""),this,radio1.isChecked());
+		}
+		startActivity(new Intent(Pagar.this,Info.class));
+		finish();
+	}
+	public void cancelar(View v){
+		startActivity(new Intent(Pagar.this,Info.class));
+		finish();
 	}
 }

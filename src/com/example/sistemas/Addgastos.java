@@ -21,16 +21,20 @@ public class Addgastos extends Activity {
 		ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(this,R.array.prioridad,android.R.layout.simple_spinner_dropdown_item);
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		prueba.setAdapter(adapter);
+		Spinner meses=(Spinner)findViewById(R.id.meses);
+		ArrayAdapter<CharSequence> adapter_meses=ArrayAdapter.createFromResource(this,R.array.meses,android.R.layout.simple_spinner_dropdown_item);
+		meses.setAdapter(adapter_meses);
 	}
 	public void deuda(View v){
 		Spinner spinner=(Spinner) findViewById(R.id.prioridad);
+		Spinner meses=(Spinner) findViewById(R.id.meses);
 		Context context = getApplicationContext();
 		EditText nombre_gasto=(EditText) findViewById(R.id.nombre_gasto);
 		EditText monto=(EditText) findViewById(R.id.monto);
 		SharedPreferences Pref =getSharedPreferences("session",Context.MODE_PRIVATE);
         String id=Pref.getString("id", "");
       	DB_Manager manager=new DB_Manager(this);
-    	manager.registrar_deuda(nombre_gasto.getText().toString(), monto.getText().toString(), spinner.getSelectedItemPosition(), id,this.getApplicationContext());
+    	manager.registrar_deuda(nombre_gasto.getText().toString(), monto.getText().toString(), spinner.getSelectedItemPosition(), id,this.getApplicationContext(),meses.getSelectedItem().toString());
     	intent=new Intent(Addgastos.this,Info.class);
     	startActivity(intent);
     	finish();

@@ -19,28 +19,6 @@
         android:text=""
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:background="@color/ver"
-        android:gravity="center_horizontal|center_vertical"
-        android:orientation="horizontal" >
-	
-        <ImageButton
-            android:id="@+id/button1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="dialog"
-            android:src="@drawable/creditcard"
-            android:contentDescription="@string/content_opc"
-            android:text="@string/tarjeta" />
-
-        
-
-    </LinearLayout>
-
     <TextView
         android:id="@+id/tarjeta_num_pagar"
         android:layout_width="wrap_content"
@@ -82,5 +60,26 @@
         android:contentDescription="@string/content_opc"
         android:onClick="verificar"
         android:src="@drawable/ic_action_settings" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/Realizado_por"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/editText" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="ver_mes"
+        android:layout_below="@+id/fechas"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="67dp"
+        android:text="Button" />
 
 </RelativeLayout>

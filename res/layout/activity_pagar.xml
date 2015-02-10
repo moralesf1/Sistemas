@@ -42,17 +42,6 @@
             android:layout_height="wrap_content"
             android:onClick="select_dinero"
             android:text="@string/Efectivo" />
-
-        <EditText
-            android:id="@+id/edit_pagar"
-            android:layout_width="112dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:enabled="false"
-            android:inputType="number" >
-
-            <requestFocus />
-        </EditText>
     </LinearLayout>
 
     <TextView
@@ -80,6 +69,7 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="cancelar"
         android:layout_alignBaseline="@+id/button1"
         android:layout_alignBottom="@+id/button1"
         android:layout_alignRight="@+id/LinearLayout2"

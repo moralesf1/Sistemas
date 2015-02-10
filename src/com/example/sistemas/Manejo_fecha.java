@@ -9,32 +9,34 @@ import android.content.Context;
 import android.widget.Toast;
 
 public class Manejo_fecha {
-
+	String ret;
 	public Manejo_fecha(Context context) {
 		
 		
 	}
-	public long fecha_mili(Context context){
-		String fecha="02/12/2014";
-		Date fechaInicio = null;
-		Calendar calendarInicio = Calendar.getInstance();
-		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-		 try {
-			fechaInicio = formato.parse(fecha);
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		calendarInicio.setTime(fechaInicio);
-		long milisegundos1 = calendarInicio.getTimeInMillis();
-		long milisegundosactual=System.currentTimeMillis();
-		long dif=milisegundos1-milisegundosactual;
-		long dif_h=dif/(60*60*1000);
-		long dif_m=dif/(60*1000);
-		Toast.makeText(context, "Milliseconds= "+dif, Toast.LENGTH_SHORT).show();
-		Toast.makeText(context, "min= "+dif_m, Toast.LENGTH_SHORT).show();
+	public String fecha_mili(Context context,long fech){
+		Long fecha=fech;
+		//Toast.makeText(context, "min= "+fecha, Toast.LENGTH_SHORT).show();
+		String fechaInicio;
+		Calendar c = Calendar.getInstance();
+		c.setTimeInMillis(fecha);
+		final SimpleDateFormat formato = new SimpleDateFormat("dd/MMMM/yyyy");
+		 fechaInicio=formato.format(c.getTime());
+		 
+		 
+				
 		
-		return milisegundos1;
+		return fechaInicio;
 	}
-
+	public String get_mes(Context context,long fech){
+		Long fecha=fech;
+		//Toast.makeText(context, "min= "+fecha, Toast.LENGTH_SHORT).show();
+		String fechaInicio;
+		Calendar c = Calendar.getInstance();
+		c.setTimeInMillis(fecha);
+		final SimpleDateFormat formato = new SimpleDateFormat("dd/MMMM/yyyy");
+		 fechaInicio=formato.format(c.getTime());
+		 String[] array=fechaInicio.split("/");
+		 return array[1];
+	}
 }

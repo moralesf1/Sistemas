@@ -55,7 +55,7 @@
             android:inputType="textPassword" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/mostrar_mes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/pass_reg"
@@ -68,7 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/user_reg"
-            android:layout_below="@+id/textView3"
+            android:layout_below="@+id/mostrar_mes"
             android:ems="10"
             android:inputType="text" />
     </RelativeLayout>

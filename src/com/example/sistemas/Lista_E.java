@@ -5,11 +5,13 @@ public class Lista_E {
 	private String deuda;
 	private String id;
 	private String estado;
-	public Lista_E(String id,String nombre,String deuda,String estado) {
+	private String mes;
+	public Lista_E(String id,String nombre,String deuda,String estado,String mes) {
 		this.id=id;
 		this.nombre=nombre;
 		this.deuda=deuda;
 		this.estado=estado;
+		this.mes=mes;
 	}
 	public String getNombre(){
 		return nombre;
@@ -23,4 +25,8 @@ public class Lista_E {
 	public String getEstado(){
 		return estado;
 	}
+	public String getMes() {
+		return mes;
+	}
+	
 }

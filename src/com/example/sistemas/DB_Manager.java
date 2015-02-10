@@ -29,7 +29,8 @@ public class DB_Manager {
 									 "id_usuario integer,nombre text not null," +
 									 "deuda integer not null," +
 									 "prioridad text not null, " +
-									 "estado text not null);";
+									 "estado text not null, " +
+									 "mes text not null);";
 	
 	public static final String tarjetas="create table tarjetas ("+
 										"_id integer primary key autoincrement," +
@@ -38,6 +39,13 @@ public class DB_Manager {
 										" numero_tarjeta integer not null, " +
 										" deuda_tarjeta integer not null);";
 	
+	public static final String categorias="create table categoria (" +
+										  " _id integer primary key autoincrement," +
+										  " id_usuario integer not null," +
+										  " nombre text not null," +
+										  " imagen text not null," +
+										  " prioridad text not null," +
+										  " subcategoria text not null);";
 	private Db helper;
 	private SQLiteDatabase db;
 	
@@ -49,8 +57,8 @@ public class DB_Manager {
         
         
 	}
-	public void registrar_deuda(String nombre,String monto,int prioridad,String id_user,Context context){
-		Toast.makeText(context,"esto entra en prioridad---> "+prioridad, Toast.LENGTH_SHORT).show();
+	public void registrar_deuda(String nombre,String monto,int prioridad,String id_user,Context context,String mes){
+		
 		ContentValues valores=new ContentValues();
 		valores.put("id_usuario", id_user);
 		valores.put("nombre", nombre);
@@ -62,7 +70,11 @@ public class DB_Manager {
 			valores.put("prioridad",prioridad);
 		}
 		valores.put("estado","sin pagar");
-		
+		if(mes.equals("Seleccione mes")){
+			valores.put("mes","Enero");
+		}
+		else
+			valores.put("mes",mes);
 		
 		
 		db.insert("deudas",null,valores);
@@ -115,12 +127,13 @@ public class DB_Manager {
 	public ArrayList<String> deudas(String id){
 		Cursor cursor;
 		ArrayList<String> rs = new ArrayList<String>();
-		cursor=db.rawQuery("Select _id,nombre,deuda,estado from deudas where id_usuario="+id,null);
+		cursor=db.rawQuery("Select _id,nombre,deuda,estado,mes from deudas where id_usuario="+id,null);
 		while(cursor.moveToNext()){
 			rs.add(cursor.getString(0));
 			rs.add(cursor.getString(1));
 			rs.add(cursor.getString(2));
 			rs.add(cursor.getString(3));
+			rs.add(cursor.getString(4));
 		}
 		return rs;
 	}
@@ -174,8 +187,12 @@ public class DB_Manager {
 		}
 		return rs;
 	}
-	public void up_deuda_tarjeta(String id_usuario,String id_tarjeta){
-		
+	public void up_deuda_tarjeta(String id_usuario,String id_tarjeta,String deuda_tarjeta,String id_item,Context context,Boolean check){
+		Toast.makeText(context,"deuda de la tarjeta---> "+check, Toast.LENGTH_SHORT).show();
+		if(check){
+			db.execSQL("Update tarjetas set deuda_tarjeta="+deuda_tarjeta+" where _id="+id_tarjeta);
+		}
+		db.execSQL("Update deudas set estado='pagado' where id_usuario='"+id_usuario+"' and _id='"+id_item+"'");
 	}
 }
 

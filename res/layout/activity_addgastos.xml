@@ -92,13 +92,20 @@
             android:text="@string/deuda" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/mostrar_mes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:text="@string/add_deuda"
             android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <Spinner
+            android:id="@+id/meses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/prioridad" />
 
     </RelativeLayout>
 
